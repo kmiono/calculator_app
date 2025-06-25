@@ -111,5 +111,18 @@ class CalculatorLogic {
         }
         break;
     }
+
+    _output = _formatResult(result);
+    _displayText = _output;
+    _operand = "";
+    _shouldReset = true;
+  }
+
+  String _formatResult(double result) {
+    if (result == result.roundToDouble()) {
+      return result.round().toString();
+    } else {
+      return result.toString();
+    }
   }
 }
